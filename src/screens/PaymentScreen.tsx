@@ -26,7 +26,7 @@ const navigation = useNavigation<Navigationprop>()
 
 
      {/* content */}
-     <View className='space-y-5 px-5 pt-5'>
+     <View className='space-y-5 px-5 py-5'>
 <View className='flex-row space-x-10 items-center'>
   <Ionicons name='md-key' size={32} color="#e8af66"/>
 <View className='flex-1'>
@@ -62,20 +62,15 @@ Unlock Limited Edition Content
   </Text>
 </View>
 </View>
-
-
-
-
-
-     </View>
-
-
-
-
-
-     
-     
+     </View>     
       </View>
+{/* monthly subscribe */}
+
+ {/* annual subscribe */}
+
+ {/* restore purchases */}
+
+
     </ScrollView>
   )
 }
