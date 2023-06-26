@@ -4,7 +4,16 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import {NavigationContainer} from '@react-navigation/native'
 import {createNativeStackNavigator} from '@react-navigation/native-stack'
 import HomeScreen from './src/screens/HomeScreen';
-const Stack = createNativeStackNavigator()
+import DemoScreen from './src/screens/DemoScreen';
+import PaymentScreen from './src/screens/PaymentScreen';
+
+
+export type RootStackParams={
+  Home:undefined;
+  Payment:undefined;
+  Demo:undefined
+}
+const Stack = createNativeStackNavigator<RootStackParams>()
 
 
 export default function App() {
@@ -13,7 +22,13 @@ export default function App() {
     <NavigationContainer>
  <Stack.Navigator>
   <Stack.Screen name='Home' component={HomeScreen} options={{headerShown:false}}/>
+  <Stack.Screen name='Demo' component={DemoScreen} options={{headerShown:false}}/>
+  <Stack.Screen name='Payment' component={PaymentScreen} options={{headerShown:false,presentation:'modal'}}/>
  </Stack.Navigator>
+
+
+
+
     </NavigationContainer>
    
   );

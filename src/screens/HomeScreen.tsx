@@ -4,12 +4,23 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import {Ionicons} from '@expo/vector-icons'
 import ActionRow from '../components/ActionRow'
 
+import { RootStackParams } from '../../App'
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { useNavigation } from '@react-navigation/native'
+
+
+export type NavigationProps = NativeStackNavigationProp<RootStackParams,"Home">
+
+
+
 const HomeScreen = () => {
+const navigation = useNavigation<NavigationProps>()
+
   return (
     <SafeAreaView className='flex-1 bg-gray-100 relative'>
       <ScrollView>
 {/* subscription */}
-<TouchableOpacity className='absolute top-5 right-10 z-50 items-center'>
+<TouchableOpacity className='absolute top-5 right-10 z-50 items-center' onPress={()=>navigation.navigate('Payment')}>
 <Ionicons name="person-circle" size={30} color='#E5962D'/>
 <Text className='text-center text-[#E5962D]'>UPGRADE</Text>
 </TouchableOpacity>
